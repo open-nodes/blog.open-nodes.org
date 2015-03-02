@@ -16,6 +16,8 @@ tags:
 
 ## 实例数据
 
+### 8G内存机器
+
 下面是一台长时间稳定运行的比特币节点(托管服务商是Linode, Plan: 8GB)，当前连接数是`872`。
 
 ```
@@ -47,6 +49,41 @@ MiB Swap: 1023.996 total,  850.188 used,  173.809 free. 1439.020 cached Mem
  3254 root      25   5 8451.9m 5.870g  12.8m S  34.9 75.0  24632:38 bitcoind
 ```
  
- ## 近30天的系统负载图
+#### 近30天的系统负载图
  
  ![linode graphs last 30 days](https://cloud.githubusercontent.com/assets/514951/6429325/c16b3a52-c004-11e4-8350-ef0647d73e3d.png)
+ 
+### 4G内存机器
+
+另外一台4G内存的机器，机械硬盘。连接数`269`。
+
+```
+$ bitcoin-cli getinfo
+{
+    "version" : 90201,
+    "protocolversion" : 70002,
+    "blocks" : 345678,
+    "timeoffset" : -1,
+    "connections" : 269,
+    "proxy" : "",
+    "difficulty" : 46684376316.86029053,
+    "testnet" : false,
+    "relayfee" : 0.00010000,
+    "errors" : ""
+}
+```
+
+内存占用`3.260g`，CPU负载`0.30`。
+
+```
+top - 18:28:40 up 86 days, 21:20,  1 user,  load average: 0.31, 0.27, 0.30
+Tasks: 156 total,   1 running, 155 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.6 us,  1.2 sy,  0.6 ni, 97.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:   4046820 total,  3900348 used,   146472 free,     4872 buffers
+KiB Swap:  2097148 total,  1329240 used,   767908 free.    85108 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+12136 root      25   5 6031.9m 3.260g   2.8m S   2.3 84.5 246:49.42 bitcoind
+```
+
+
